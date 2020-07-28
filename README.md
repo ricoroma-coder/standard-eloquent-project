@@ -1,4 +1,4 @@
-##Siga as seguintes instruções para começar a codificar:
+#Siga as seguintes instruções para começar a codificar:
 
 #Abra o terminal de comando na pasta do projeto e execute:
 	composer install
@@ -21,13 +21,13 @@
 
 #Comece a codificar.
 
-##Funcionalidades:
+#Funcionalidades:
 
 #Para registrar uma nova rota:
 -Abra o arquivo Route.php em "app/models/general/Route.php":
 -Registre uma nova rota na função setRoutes() na linha 35;
 -Exemplo: Crie uma nova rota "categorias"
-- Array Original
+Array Original
 	$this->routes = [
 		'index' => [
 			'path' => 'resources/views/index.php',
@@ -38,7 +38,7 @@
 			'title' => 'Caminho não encontrado'
 		]
 	];
-- Novo Array
+Novo Array
 	$this->routes = [
 		'index' => [
 			'path' => 'resources/views/index.php',
@@ -58,7 +58,7 @@
 -Para acessar essa nova rota no navegador remotamente, configure a url para:
 	www.domain.com/categorias
 
-##Follow the given steps to start coding:
+#Follow the given steps to start coding:
 
 #Open terminal in the project's folder and run:
 	composer install
@@ -81,13 +81,13 @@
 
 #Start coding.
 
-##Engine
+#Engine
 
 #To register a new route:
 -Open the file Route.php at "app/models/general/Route.php":
 -Add a new route in function setRoutes() at line 35;
 -Example: Add a new route "categories"
-- Original Array
+Original Array
 	$this->routes = [
 		'index' => [
 			'path' => 'resources/views/index.php',
@@ -98,7 +98,7 @@
 			'title' => 'Caminho não encontrado'
 		]
 	];
-- New Array
+New Array
 	$this->routes = [
 		'index' => [
 			'path' => 'resources/views/index.php',

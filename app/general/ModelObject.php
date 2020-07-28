@@ -1,8 +1,10 @@
 <?php 
 
-namespace Models\General;
+namespace App\General;
 
-class Model {
+use Illuminate\Database\Eloquent\Model;
+
+class ModelObject extends Model {
 
 	public function get($attr) {
 		return $this->$attr;

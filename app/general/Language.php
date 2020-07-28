@@ -1,10 +1,10 @@
 <?php
 
-namespace Models\General;
+namespace App\General;
 
-use Models\General\Model;
+use App\General\ModelObject;
 
-class Language extends Model {
+class Language extends ModelObject {
 
 	protected $current = 'pt-br';
 	protected $messages;
