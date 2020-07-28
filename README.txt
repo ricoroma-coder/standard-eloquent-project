@@ -24,35 +24,8 @@
 ##Funcionalidades:
 
 #Para registrar uma nova rota:
--Abra o arquivo Route.php em "app/models/general/Route.php":
--Registre uma nova rota na função setRoutes() na linha 35;
--Exemplo: Crie uma nova rota "categorias"
-- Array Original
-	$this->routes = [
-		'index' => [
-			'path' => 'resources/views/index.php',
-			'title' => 'Home'
-		],
-		'nao-encontrado' => [
-			'path' => 'resources/views/error/404.php',
-			'title' => 'Caminho não encontrado'
-		]
-	];
-- Novo Array
-	$this->routes = [
-		'index' => [
-			'path' => 'resources/views/index.php',
-			'title' => 'Home'
-		],
-		'nao-encontrado' => [
-			'path' => 'resources/views/error/404.php',
-			'title' => 'Caminho não encontrado'
-		],
-		'categorias' => [
-			'path' => 'resources/views/categoria/index.php',
-			'title' => 'Categorias'
-		]
-	];
+-Abra o arquivo route-list.php em "routes/route-list.php":
+-Registre uma nova rota como mostrado no arquivo;
 -Para acessar essa nova rota no navegador localmente, configure a url para:
 	localhost/standard-eloquent-project/categorias
 -Para acessar essa nova rota no navegador remotamente, configure a url para:
@@ -84,35 +57,8 @@
 ##Engine
 
 #To register a new route:
--Open the file Route.php at "app/models/general/Route.php":
--Add a new route in function setRoutes() at line 35;
--Example: Add a new route "categories"
-- Original Array
-	$this->routes = [
-		'index' => [
-			'path' => 'resources/views/index.php',
-			'title' => 'Home'
-		],
-		'nao-encontrado' => [
-			'path' => 'resources/views/error/404.php',
-			'title' => 'Caminho não encontrado'
-		]
-	];
-- New Array
-	$this->routes = [
-		'index' => [
-			'path' => 'resources/views/index.php',
-			'title' => 'Home'
-		],
-		'nao-encontrado' => [
-			'path' => 'resources/views/error/404.php',
-			'title' => 'Caminho não encontrado'
-		],
-		'categories' => [
-			'path' => 'resources/views/category/index.php',
-			'title' => 'Categories'
-		]
-	];
+-Open the file route-list.php at "routes/route-list.php":
+-Add a new route following the example in the file;
 -To reach this page at navigator locally, set url to:
 	localhost/standard-eloquent-project/categories
 -To reach this page at navigator remotely, set url to:
