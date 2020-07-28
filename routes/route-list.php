@@ -13,3 +13,8 @@ Route::get('/', function () {
 Route::get('/login', 'ViewController@login');
 Route::get('/recuperar-senha', 'ViewController@forgotPassword');
 Route::get('/cadastrar', 'ViewController@register');
+
+Route::get('/teste', function () {
+	$c = new Controller();
+	return $c->view('teste');
+});

@@ -1,8 +1,9 @@
 <?php 
 
+use App\User;
 
-echo 'teste';
+$user = new User();
+
+var_dump($user->get('connection'));
 
 ?>
-
-<a href="/">Voltar ao index</a>
