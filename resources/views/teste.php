@@ -1,9 +1,12 @@
 <?php 
 
-use App\User;
+use App\General\Schema;
+use App\General\Seed;
 
-$user = new User();
+$seed = new Seed();
 
-var_dump($user->get('connection'));
+// var_dump($seed);
+
+$seed->up();
 
 ?>

@@ -11,6 +11,7 @@ class Database {
     protected $DBNAME;
     protected $DBUSER;
     protected $DBPASS;
+    protected $DBPORT;
  
     public function __construct() {
         $this->readConfig();
@@ -39,7 +40,7 @@ class Database {
             $this->setAttributes(substr($content, $start, $end));
         }
         else {
-            echo 'Não encontrei o arquivo .env';
+            die('.env not found');
         }
     }
 
