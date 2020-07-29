@@ -2,6 +2,7 @@
 
 # Abra o terminal de comando na pasta do projeto e execute:
 	composer install
+	composer dump-autoload
 
 # Configure o arquivo .env com os dados de sua base de dados:
 	$DBDRIVER="{DBDRIVER}";
@@ -51,6 +52,7 @@
 
 # Open terminal at root directory and run:
 	composer install
+	composer dump-autoload
 
 # Configure the file config.php to your database info:
 	$DBDRIVER="{DBDRIVER}";

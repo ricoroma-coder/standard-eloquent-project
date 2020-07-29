@@ -11,6 +11,8 @@ Route::get('/', function () {
 
 // auth
 Route::get('/login', 'ViewController@login');
+Route::post('/login/auth', 'ViewController@auth');
+Route::post('/logout', 'ViewController@logOut');
 Route::get('/recuperar-senha', 'ViewController@forgotPassword');
 Route::get('/cadastrar', 'ViewController@register');
 

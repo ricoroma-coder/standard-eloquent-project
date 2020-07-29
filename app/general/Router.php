@@ -59,7 +59,6 @@ class Router {
 
     protected function notFound($data = []) {
         require __DIR__.'/../../resources/views/error/404.php';
-        // return header("HTTP/1.0 404 Not Found", true, 404);
     }
      
      

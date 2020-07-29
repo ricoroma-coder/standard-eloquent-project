@@ -2,9 +2,13 @@
 <html>
 <head>
 	<?php require __DIR__.'/layout/links.php'; ?>
-	<title></title>
+	<title>Eloquent Project - Home Page</title>
 </head>
 <body>
+
+	<?php require __DIR__.'/../preparation/header.php'; ?>
+
+	<?php require __DIR__.'/components/navbar.php'; ?>
 
 	<div id="content">
 		<div class="bg bg-dark"></div>

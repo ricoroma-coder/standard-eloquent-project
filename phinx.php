@@ -1,6 +1,4 @@
 <?php
-// use App\General\Database;
-// $db = new Database();
 
 require 'config.php';
 

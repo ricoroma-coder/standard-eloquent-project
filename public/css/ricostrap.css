@@ -123,3 +123,12 @@
 	font-size: 16px;
 }
 
+/*.link {
+}*/
+
+.link:hover {
+	text-decoration: none;
+	font-style: none;
+	cursor: pointer;
+}
+

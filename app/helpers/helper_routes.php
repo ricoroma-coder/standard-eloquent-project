@@ -49,3 +49,12 @@ function toAbsolute($relative_url, $path){
 function toRoot($relative_url, $path){
     return $_SERVER['DOCUMENT_ROOT'].toAbsolute($relative_url, $path);
 }
+
+function routeIs($path) {
+    if (isset($_GET['uri']) && !empty($_GET['uri']))
+        $uri = '/'.$_GET['uri'];
+    else
+        $uri = '/';
+
+    return $path == $uri;
+}
