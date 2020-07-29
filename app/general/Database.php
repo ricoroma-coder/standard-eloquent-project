@@ -26,6 +26,7 @@ class Database {
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',
         ]);
+        $capsule->setAsGlobal();
         // Setup the Eloquent ORM… 
         $capsule->bootEloquent();
     }

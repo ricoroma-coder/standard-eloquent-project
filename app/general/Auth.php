@@ -2,9 +2,9 @@
 
 namespace App\General;
 
-use Illuminate\Database\Eloquent\Model;
+use App\General\Validate;
 
-class Auth extends Model {
+class Auth extends Validate {
 
 	public function checkAuthenticable($data) {
 		$user = $this::where('username', $data['username'])->first();

@@ -52,6 +52,25 @@ class ViewController extends Controller {
  	public function logOut() {
  		session_destroy();
  		return header('Location: /');
- 	}
+	}
+	 
+	public function signin() {
+		$user = new User();
+		$post = $_POST;
+
+		foreach($post as $key => $value) {
+			$user->$key = $value;
+		}
+
+		$rules = [
+			'name' => 'require',
+			'username' => 'require|unique:users',
+			'password' => 'require|min:8|max:16',
+			'email' => 'require|email|unique:users'
+		];
+		$validate = $user->validate($rules);
+
+		var_dump($validate);
+	}
 
 }
