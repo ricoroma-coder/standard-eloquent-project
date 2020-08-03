@@ -34,7 +34,10 @@ function back()
 }
 
 function asset($path) {
-	return toAbsolute('../../public/'.$path,__FILE__);
+    $url = toAbsolute('../../public/'.$path,__FILE__);
+    if (strpos($url, '/') !== 0)
+        $url = $path;
+	return $url;
 }
 
 function toAbsolute($relative_url, $path){
@@ -51,10 +54,10 @@ function toRoot($relative_url, $path){
 }
 
 function routeIs($path) {
-    if (isset($_GET['uri']) && !empty($_GET['uri']))
-        $uri = '/'.$_GET['uri'];
-    else
-        $uri = '/';
+    $req = new Request();
+    return $req->base() === $path;
+}
 
-    return $path == $uri;
+function component($path, $data = []) {
+    require __DIR__.'/../../resources/'.$path.'.php';
 }

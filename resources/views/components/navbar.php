@@ -6,7 +6,7 @@
 
 	<?php 
 
-		if ($session) {
+		if ($data['session']) {
 
 	?>
 
@@ -14,7 +14,7 @@
 				
 				<div class="row m-0 w-100 h-auto border-left border-right pt-3">
 					<div class="col-sm-8">
-						<span class="font4 font-abeezee">Bem vindo, <?php echo $obj->name; ?></span>
+						<span class="font4 font-abeezee">Bem vindo, <?php echo $data['object']->name; ?></span>
 					</div>
 
 					<div class="col-sm-4">

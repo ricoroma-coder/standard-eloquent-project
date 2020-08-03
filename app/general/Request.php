@@ -13,12 +13,20 @@ class Request {
  
     public function __construct()
     {
+
         $this->base = $_SERVER['REQUEST_URI'];
-        $this->uri  = $_REQUEST['uri'] ?? '/';
         $this->method = strtolower($_SERVER['REQUEST_METHOD']);
         $this->protocol = isset($_SERVER["HTTPS"]) ? 'https' : 'http';
+
+        if (isset($_REQUEST['uri']))
+            $this->uri = $_REQUEST['uri'];
+        else if ($this->base == '/')
+            $this->uri = '/';
+        else
+            $this->uri = substr($this->base, 1);
+
         $this->setData();
- 
+
         if(count($_FILES) > 0) {
             $this->setFiles();
         }

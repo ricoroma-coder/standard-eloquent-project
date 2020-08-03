@@ -2,7 +2,7 @@
 
 use App\User;
 
-$obj = null;
+$obj = false;
 $session = false;
 
 if (isset($_SESSION['user']) && !empty($_SESSION['user'])) {

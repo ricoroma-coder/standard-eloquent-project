@@ -1,3 +1,6 @@
+<?php  
+	require __DIR__.'/../../preparation/header.php'; 
+?>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,9 +9,9 @@
 </head>
 <body>
 
-	<?php  require __DIR__.'/../../preparation/header.php'; ?>	
-
-	<?php require __DIR__.'/../components/navbar.php'; ?>
+	<?php 
+		component('views/components/navbar', ['session'=>$session,'object'=>$obj]);
+	?>
 
 	<div id="content">
 		
