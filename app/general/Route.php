@@ -9,10 +9,13 @@ class Route {
 	protected static $router;
  
     private function __construct()
-    {}
+    {
+        # 'Break Route ln. 13<br>';
+    }
      
     protected static function getRouter()
     {
+        # 'Break Route ln. 18<br>';
         if(empty(self::$router)) {
             self::$router = new Router;
         }
@@ -20,26 +23,34 @@ class Route {
     }
  
     public static function post($pattern, $callback){
+        # 'Break Route ln. 26<br>';
         return self::getRouter()->post($pattern, $callback);
     }
      
     public static function get($pattern, $callback){
+    	// $pattern = url address
+    	// $callback = function || controller || controller's method
+        # 'Break Route ln. 31<br>';
         return self::getRouter()->get($pattern, $callback);
     }
  
     public static function put($pattern, $callback){
+        # 'Break Route ln. 36<br>';
         return self::getRouter()->put($pattern, $callback);
     }
  
     public static function delete($pattern, $callback){
+        # 'Break Route ln. 41<br>';
         return self::getRouter()->delete($pattern, $callback);
     }
      
     public static function resolve($pattern){
+        # 'Break Route ln. 46<br>';
         return self::getRouter()->resolve($pattern);
     }
  
     public static function translate($pattern, $params){
+        # 'Break Route ln. 51<br>';
         return self::getRouter()->translate($pattern, $params);
     }
 

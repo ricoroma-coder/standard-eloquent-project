@@ -11,7 +11,7 @@ class Router {
 	protected $route_collection;
  
     public function __construct() {
- 
+        # 'Break Router ln. 14<br>';
         $this->route_collection = new RouteCollection;
         $this->dispacher = new Dispacher;
 
@@ -19,6 +19,7 @@ class Router {
  
     public function get($pattern, $callback){    
 
+        # 'Break Router ln. 22<br>';
         $this->route_collection->add('get', $pattern, $callback);
         return $this;
 
@@ -26,6 +27,7 @@ class Router {
  
     public function post($pattern, $callback) {
          
+        # 'Break Router ln. 30<br>';
         $this->route_collection->add('post', $pattern, $callback);
         return $this;   
 
@@ -33,6 +35,7 @@ class Router {
  
     public function put($pattern, $callback) {
          
+        # 'Break Router ln. 38<br>';
         $this->route_collection->add('put', $pattern, $callback);
         return $this;   
 
@@ -40,6 +43,7 @@ class Router {
  
     public function delete($pattern, $callback) {
          
+        # 'Break Router ln. 46<br>';
         $this->route_collection->add('delete', $pattern, $callback);
         return $this;  
 
@@ -47,31 +51,33 @@ class Router {
  
     public function find($request_type, $pattern) {
 
+        # 'Break Router ln. 54<br>';
         return $this->route_collection->where($request_type, $pattern);
         
     }
 
-    protected function dispach($route, $params, $namespace = "App\\Controllers\\"){
+    protected function dispach($route, $data = []){
      
-        return $this->dispacher->dispach($route->callback, $params, $namespace);
+        # 'Break Router ln. 61<br>';
+        return $this->dispacher->dispach($route->callback, $data, "App\\Controllers\\");
 
     }
 
     protected function notFound($data = []) {
+        # 'Break Router ln. 67<br>';
         require __DIR__.'/../../resources/views/error/404.php';
     }
      
      
     public function resolve($request){
      
+        # 'Break Router ln. 74<br>';
         $route = $this->find($request->method(), $request->uri());
      
-        if($route)
-        {
-             
-            $params = $route->callback['values'] ? $this->getValues($request->uri(), $route->callback['values']) : [];
+        if($route) {
+            // var_dump($request->all());
      
-            return $this->dispach($route, $params);
+            return $this->dispach($route, $request->all());
         }
         return $this->notFound($request->uri());
      
@@ -79,6 +85,7 @@ class Router {
 
     protected function getValues($pattern, $positions)
     {
+        # 'Break Router ln. 90<br>';
         $result = [];
      
         $pattern = array_filter(explode('/', $pattern));
@@ -96,6 +103,7 @@ class Router {
 
     public function translate($name, $params)
     {
+        # 'Break Router ln. 108<br>';
         $pattern = $this->route_collection->isThereAnyHow($name);
          
         if($pattern)

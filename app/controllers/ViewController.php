@@ -3,12 +3,15 @@
 namespace App\Controllers; 
 
 use App\Controllers\Controller;
+use App\General\Request;
 use App\User;
 
 class ViewController extends Controller {
  
     public function index() {
-       	$this->view('index');
+    	redirect('/login');
+    	// $_SERVER['REQUEST_URI'] = '/qualquer-lugar';
+       	// $this->view('index');
     }
 
  	public function login() {
@@ -72,5 +75,11 @@ class ViewController extends Controller {
 
 		var_dump($validate);
 	}
+
+	public function testando($data) {
+	// array_values($params)
+		var_dump($data);
+	}
+
 
 }

@@ -13,6 +13,7 @@ class RouteCollection {
  
     public function add($request_type, $pattern, $callback)
     {
+        # 'Break RouteCollection ln. 16<br>';
         switch($request_type)
         {
             case 'post':
@@ -35,6 +36,7 @@ class RouteCollection {
          
     protected function definePattern($pattern) {
  
+        # 'Break RouteCollection ln. 39<br>';
 	    $pattern = implode('/', array_filter(explode('/', $pattern)));
 	    $pattern = '/^' . str_replace('/', '\/', $pattern) . '$/';
 	 
@@ -48,6 +50,7 @@ class RouteCollection {
  
     protected function addPost($pattern, $callback){
  
+        # 'Break RouteCollection ln. 53<br>';
 	    if(is_array($pattern)) {
 	         
 	        $settings = $this->parsePattern($pattern);
@@ -73,6 +76,7 @@ class RouteCollection {
 	 
 	protected function addGet($pattern, $callback){
 	     
+        # 'Break RouteCollection ln. 79<br>';
 	    if(is_array($pattern)) {
 	         
 	        $settings = $this->parsePattern($pattern);
@@ -99,6 +103,7 @@ class RouteCollection {
 	 
 	protected function addPut($pattern, $callback){
 	     
+        # 'Break RouteCollection ln. 106<br>';
 	    if(is_array($pattern)) {
 	         
 	        $settings = $this->parsePattern($pattern);
@@ -124,6 +129,7 @@ class RouteCollection {
 	 
 	protected function addDelete($pattern, $callback){
 	 
+        # 'Break RouteCollection ln. 132<br>';
 	    if(is_array($pattern)) {
 	         
 	        $settings = $this->parsePattern($pattern);
@@ -149,6 +155,7 @@ class RouteCollection {
 
 	public function where($request_type, $pattern) {
  
+        # 'Break RouteCollection ln. 158<br>';
 	    switch($request_type){
 	            case 'post':
 	                return $this->findPost($pattern);
@@ -171,12 +178,14 @@ class RouteCollection {
 	 
 	protected function parseUri($uri) {
 	 
+        # 'Break RouteCollection ln. 181<br>';
 	    return implode('/', array_filter(explode('/', $uri)));
 
 	}
 
 	protected function findPost($pattern_sent) {
 	 
+        # 'Break RouteCollection ln. 108<br>';
 	    $pattern_sent = $this->parseUri($pattern_sent);
 	 
 	    foreach($this->routes_post as $pattern => $callback) {
@@ -193,6 +202,7 @@ class RouteCollection {
 	 
 	protected function findGet($pattern_sent) {
 	 
+        # 'Break RouteCollection ln. 205<br>';
 	    $pattern_sent = $this->parseUri($pattern_sent);
 	 
 	    foreach($this->routes_get as $pattern => $callback) {
@@ -209,6 +219,7 @@ class RouteCollection {
 	 
 	protected function findPut($pattern_sent) {
 	 
+        # 'Break RouteCollection ln. 222<br>';
 	    $pattern_sent = $this->parseUri($pattern_sent);
 	 
 	    foreach($this->routes_put as $pattern => $callback) {
@@ -225,6 +236,7 @@ class RouteCollection {
 	 
 	protected function findDelete($pattern_sent) {
 	 
+        # 'Break RouteCollection ln. 239<br>';
 	    $pattern_sent = $this->parseUri($pattern_sent);
 	 
 	    foreach($this->routes_delete as $pattern => $callback) {
@@ -240,6 +252,7 @@ class RouteCollection {
 
 	protected function strposarray(string $haystack, array $needles, int $offset = 0)
 	{
+        # 'Break RouteCollection ln. 255<br>';
 	    $result = false;
 	    if(strlen($haystack) > 0 && count($needles) > 0)
 	    {
@@ -258,6 +271,7 @@ class RouteCollection {
 	protected function toMap($pattern)
 	{
 	 
+        # 'Break RouteCollection ln. 274<br>';
 	    $result = [];
 	 
 	    $needles = ['{', '[', '(', "\\"];
@@ -284,6 +298,7 @@ class RouteCollection {
 	
 	protected function parsePattern(array $pattern)
 	{
+        # 'Break RouteCollection ln. 301<br>';
 	    // Define the pattern
 	    $result['set'] = $pattern['set'] ?? null;
 	    // Allows route name settings
@@ -295,11 +310,13 @@ class RouteCollection {
 
 	public function isThereAnyHow($name)
 	{
+        # 'Break RouteCollection ln. 313<br>';
 	    return $this->route_names[$name] ?? false;
 	}
 
 	public function convert($pattern, $params)
 	{
+        # 'Break RouteCollection ln. 319<br>';
 	    if(!is_array($params))
 	    {
 	        $params = array($params);

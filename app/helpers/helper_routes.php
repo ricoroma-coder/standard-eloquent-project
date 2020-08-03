@@ -3,29 +3,25 @@
 use App\General\Route;
 use App\General\Request;
  
-function request()
-{
+function request() {
     return new Request;
 }
  
  
-function resolve($request = null)
-{
-    if(is_null($request)) {
-        $request = request();
-    }
-    return Route::resolve($request);        
+function resolve($base = '', $data = [], $files = []) {
+    $request = new Request($base, $data, $files);
+    return Route::resolve($request);
 }
  
  
-function route($name, $params = null)
-{
+function route($name, $params = null) {
     return Route::translate($name, $params);
 }
  
-function redirect($pattern)
+function redirect($uri, $data = [], $files = [])
 {
-    return resolve($pattern);
+    resolve($uri, $data, $files);
+    return header('Location: '.$uri);
 }
  
 function back()

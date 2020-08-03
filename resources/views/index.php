@@ -1,19 +1,19 @@
-<?php  
+<!-- <?php  
 
-require __DIR__.'/../preparation/header.php';
+//require __DIR__.'/../preparation/header.php';
 
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<?php require __DIR__.'/layout/links.php'; ?>
+	<?php //require __DIR__.'/layout/links.php'; ?>
 	<title>Eloquent Project - Home Page</title>
 </head>
 <body>
 
 	<?php 
-		component('views/components/navbar', ['session'=>$session,'object'=>$obj]);
+		//component('views/components/navbar', ['session'=>$session,'object'=>$obj]);
 	?>
 
 	<div id="content">
@@ -23,7 +23,7 @@ require __DIR__.'/../preparation/header.php';
 			<div class="row col60 rounded bg-light h-50 position-relative m-auto">
 
 				<div class="h-100 col45 p-3">
-					<img src="<?php echo asset('images/system-images/avatar/avatar-happy.png'); ?>" class="w-100 h-100 rounded-circle">
+					<img src="<?php //echo asset('images/system-images/avatar/avatar-happy.png'); ?>" class="w-100 h-100 rounded-circle">
 				</div>
 
 				<div class="h-100 col55 p-3 text-center row m-0">
@@ -42,7 +42,7 @@ require __DIR__.'/../preparation/header.php';
 	</div>
 
 
-	<?php require __DIR__.'/layout/scripts.php'; ?>
+	<?php //require __DIR__.'/layout/scripts.php'; ?>
 </body>
-</html>
+</html> -->
 
