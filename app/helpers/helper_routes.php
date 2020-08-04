@@ -21,7 +21,6 @@ function route($name, $params = null) {
 function redirect($uri, $data = [], $files = [])
 {
     resolve($uri, $data, $files);
-    return header('Location: '.$uri);
 }
  
 function back()
@@ -57,3 +56,5 @@ function routeIs($path) {
 function component($path, $data = []) {
     require __DIR__.'/../../resources/'.$path.'.php';
 }
+
+?>

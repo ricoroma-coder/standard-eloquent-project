@@ -7,11 +7,11 @@ use App\General\Validate;
 class Auth extends Validate {
 
 	public function checkAuthenticable($data) {
-		$user = $this::where('username', $data['username'])->first();
+		$obj = $this::where('username', $data['username'])->first();
 
-		if (isset($user) && !empty($user)) {
- 			if (password_verify($data['password'], $user->password)) {
- 				return $user;
+		if (isset($obj) && !empty($obj)) {
+ 			if (password_verify($data['password'], $obj->password)) {
+ 				return $obj;
  			}
  			else {
  				return false;
@@ -25,7 +25,7 @@ class Auth extends Validate {
 		if (isset($_SESSION))
 			session_destroy();
 		session_start();
-		$_SESSION['user'] = $this->id;
+		$_SESSION['obj'] = $this->id;
 	}
 
 }

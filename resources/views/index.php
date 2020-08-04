@@ -1,3 +1,9 @@
+<?php  
+
+var_dump($data);
+
+?>
+
 <!-- <?php  
 
 //require __DIR__.'/../preparation/header.php';
@@ -44,5 +50,6 @@
 
 	<?php //require __DIR__.'/layout/scripts.php'; ?>
 </body>
-</html> -->
+</html>
 
+ -->

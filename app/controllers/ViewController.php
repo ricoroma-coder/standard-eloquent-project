@@ -8,16 +8,16 @@ use App\User;
 
 class ViewController extends Controller {
  
-    public function index() {
-    	redirect('/login');
-    	// $_SERVER['REQUEST_URI'] = '/qualquer-lugar';
-       	// $this->view('index');
+    public function index($data = []) {
+    	redirect('/login', ['um'=>1,'dois'=>2]);
+       	// $this->view('index', $data);
     }
 
- 	public function login() {
- 		if (isset($_SESSION['user']) && !empty($_SESSION['user']))
- 			return header('Location: /');
-        $this->view('auth/login');
+ 	public function login($data = []) {
+ 		var_dump($data);
+ 		// if (isset($_SESSION['obj']) && !empty($_SESSION['obj']))
+ 		// 	return redirect('/', ['object'=>User::find($_SESSION['obj'])]);
+   //      $this->view('auth/login');
  	}
 
  	public function forgotPassword() {
@@ -25,6 +25,8 @@ class ViewController extends Controller {
  	}
 
  	public function register() {
+ 		if (isset($_SESSION['obj']) && !empty($_SESSION['obj']))
+ 			return redirect('/', ['object'=>User::find($_SESSION['obj'])]);
         $this->view('auth/register');
  	}
 
@@ -40,7 +42,7 @@ class ViewController extends Controller {
  				]
  			];
  			$user->session();
- 			return header('Location: /');
+ 			return redirect('/', [$user]);
  		}
  		else {
  			$content = [
@@ -48,13 +50,13 @@ class ViewController extends Controller {
  					'validate' => 'Os campos não batem'
  				]
  			];
- 			return header('Location: /login');
+ 			return redirect('/login', $content);
  		}
  	}
 
  	public function logOut() {
  		session_destroy();
- 		return header('Location: /');
+ 		return redirect('/');
 	}
 	 
 	public function signin() {
