@@ -4,20 +4,19 @@ namespace App\Controllers;
 
 use App\Controllers\Controller;
 use App\General\Request;
+use App\General\View;
 use App\User;
 
 class ViewController extends Controller {
  
-    public function index($data = []) {
-    	redirect('/login', ['um'=>1,'dois'=>2]);
-       	// $this->view('index', $data);
+    public function index() {
+       	$this->view('index');
     }
 
- 	public function login($data = []) {
- 		var_dump($data);
- 		// if (isset($_SESSION['obj']) && !empty($_SESSION['obj']))
- 		// 	return redirect('/', ['object'=>User::find($_SESSION['obj'])]);
-   //      $this->view('auth/login');
+ 	public function login() {
+ 		if (hasSession())
+ 			return $this->redirect('/');
+        $this->view('auth/login');
  	}
 
  	public function forgotPassword() {
@@ -25,15 +24,16 @@ class ViewController extends Controller {
  	}
 
  	public function register() {
- 		if (isset($_SESSION['obj']) && !empty($_SESSION['obj']))
- 			return redirect('/', ['object'=>User::find($_SESSION['obj'])]);
+ 		if (hasSession())
+ 			return $this->redirect('/');
         $this->view('auth/register');
  	}
 
- 	public function auth() {
- 		$post = $_POST;
+ 	public function auth($request) {
  		$user = new User();
- 		$user = $user->checkAuthenticable($post);
+ 		$user = $user->checkAuthenticable($request['method']);
+ 		$redirect = '/';
+ 		$content = [];
  		if ($user) {
  			$content = [
  				'object' => $user,
@@ -42,7 +42,6 @@ class ViewController extends Controller {
  				]
  			];
  			$user->session();
- 			return redirect('/', [$user]);
  		}
  		else {
  			$content = [
@@ -50,13 +49,14 @@ class ViewController extends Controller {
  					'validate' => 'Os campos não batem'
  				]
  			];
- 			return redirect('/login', $content);
+ 			$redirect = '/login';
  		}
+ 		return $this->redirect($redirect, $content);
  	}
 
  	public function logOut() {
  		session_destroy();
- 		return redirect('/');
+ 		return $this->redirect('/');
 	}
 	 
 	public function signin() {

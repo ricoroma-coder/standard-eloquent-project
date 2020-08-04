@@ -1,5 +1,5 @@
 <?php  
-	require __DIR__.'/../../preparation/header.php'; 
+	require __DIR__.'/../../preparation/header.php';
 ?>	
 <!DOCTYPE html>
 <html>

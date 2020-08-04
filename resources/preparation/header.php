@@ -5,13 +5,17 @@ use App\User;
 $obj = false;
 $session = false;
 
-if (isset($_SESSION['user']) && !empty($_SESSION['user'])) {
+if (hasSession()) {
 
-	$obj = User::find($_SESSION['user']);
+	$obj = User::find(getSessionValue('obj'));
 	$session = true;
 
 }
 
+if (isset($_SESSION['data']) && empty($data)) {
 
+	$data = $_SESSION['data'];
+
+}
 
 ?>

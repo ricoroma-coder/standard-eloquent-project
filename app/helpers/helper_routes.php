@@ -18,10 +18,11 @@ function route($name, $params = null) {
     return Route::translate($name, $params);
 }
  
-function redirect($uri, $data = [], $files = [])
-{
-    resolve($uri, $data, $files);
-}
+// function redirect($uri, $data = [], $files = [])
+// {
+//     header('Location: '.$uri);
+//     // resolve($uri, $data, $files);
+// }
  
 function back()
 {
@@ -55,6 +56,14 @@ function routeIs($path) {
 
 function component($path, $data = []) {
     require __DIR__.'/../../resources/'.$path.'.php';
+}
+
+function hasSession() {
+    return isset($_SESSION['obj']) && !empty($_SESSION['obj']);
+}
+
+function getSessionValue($key) {
+    return $_SESSION[$key];
 }
 
 ?>

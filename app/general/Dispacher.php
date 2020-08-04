@@ -7,11 +7,11 @@ class Dispacher {
 	public function dispach($callback, $params = [], $namespace = "App\\Controllers\\")
     {   
         # 'Break Dispacher ln. 9<br>';
-        if(is_callable($callback['callback']))
-        {
-            return call_user_func_array($callback['callback'], array(array_values($params)));
+        if(is_callable($callback['callback'])) {
+            return call_user_func_array($callback['callback'], array($params));
          
-        } elseif (is_string($callback['callback'])) {
+        } 
+        elseif (is_string($callback['callback'])) {
          
             if(!!strpos($callback['callback'], '@') !== false) {
      
@@ -29,7 +29,7 @@ class Dispacher {
      
                 if($rc->isInstantiable() && $rc->hasMethod($method))
                 {
-                    return call_user_func_array(array(new $controller, $method), array(array_values($params)));
+                    return call_user_func_array(array(new $controller, $method), array($params));
                  
                 } else {
      
