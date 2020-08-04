@@ -3,23 +3,15 @@
 use App\General\Route as Route;
 use App\Controllers\Controller;
 
-// Route::get('/', function () {
-// 	$c = new Controller();
-// 	return $c->view('index');
-// });
-
 Route::get('/', 'ViewController@index');
 
-
 // auth
-Route::get('/login', 'ViewController@login');
-Route::post('/login/auth', 'ViewController@auth');
-Route::get('/logout', 'ViewController@logOut');
-Route::get('/recuperar-senha', 'ViewController@forgotPassword');
-Route::get('/cadastrar', 'ViewController@register');
-Route::post('/cadastrar/auth', 'ViewController@signin');
-
-Route::get('/auxiliar', 'ViewController@testando');
+Route::get('/login', 'AuthController@login');
+Route::post('/login/auth', 'AuthController@auth');
+Route::get('/logout', 'AuthController@logOut');
+Route::get('/recuperar-senha', 'AuthController@forgotPassword');
+Route::get('/cadastrar', 'AuthController@register');
+Route::post('/cadastrar/auth', 'AuthController@signin');
 
 Route::get('/teste', function () {
 	$c = new Controller();

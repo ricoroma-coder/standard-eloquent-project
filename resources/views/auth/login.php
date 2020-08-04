@@ -1,5 +1,6 @@
 <?php  
 	require __DIR__.'/../../preparation/header.php';
+	// var_dump($data);
 ?>	
 <!DOCTYPE html>
 <html>
@@ -14,10 +15,11 @@
 	?>
 
 	<div id="content">
-		
+		<div class="bg bg-dark"></div>
+
 		<div class="row m-0 mt-5 pt-5">
 			
-			<form class="form-group row col-sm-4 m-auto p-4 border border-secondary rounded" method="POST" action="/login/auth">
+			<form class="form-group row col-sm-4 m-auto p-4 border border-secondary rounded bg-light" method="POST" action="/login/auth">
 				<div class="col-sm-12 mb-2">
 					<label class="font4" for="username-input">Nome de usuário</label>
     				<input type="text" class="form-control" id="username-input" placeholder="Nome de usuário" name="username">
@@ -31,6 +33,10 @@
 				<div class="col-sm-12 mb-2 text-right">
 					<button class="btn btn-primary">Entrar</button>
 				</div>
+
+				<?php 
+					component('views/components/alerts', $messages);
+				?>
 				
 			</form>
 

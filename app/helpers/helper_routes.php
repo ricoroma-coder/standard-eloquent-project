@@ -18,12 +18,6 @@ function route($name, $params = null) {
     return Route::translate($name, $params);
 }
  
-// function redirect($uri, $data = [], $files = [])
-// {
-//     header('Location: '.$uri);
-//     // resolve($uri, $data, $files);
-// }
- 
 function back()
 {
     return header('Location: ' . $_SERVER['HTTP_REFERER']);

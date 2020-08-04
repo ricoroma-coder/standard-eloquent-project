@@ -36,6 +36,9 @@ final class CreateUsersTable extends AbstractMigration
             ->addColumn('created_at', 'datetime',[
                 'default' => 'CURRENT_TIMESTAMP'
             ])
+            ->addColumn('updated_at', 'datetime',[
+                'default' => 'CURRENT_TIMESTAMP'
+            ])
             ->addColumn('admin', 'boolean', [
                 'null' => false,
                 'default' => false
