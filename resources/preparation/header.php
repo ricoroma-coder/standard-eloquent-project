@@ -12,13 +12,8 @@ if (hasSession()) {
 
 }
 
-if (isset($_SESSION['data']) && empty($data)) {
-
-	$data = $_SESSION['data'];
-	unset($_SESSION['data']);
-
-}
-
-$messages = isset($data['messages']) ? $data['messages'] : [];
+$messages = [];
+if (isset($data['messages']))
+	$messages = $data['messages'];
 
 ?>

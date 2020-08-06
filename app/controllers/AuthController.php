@@ -9,7 +9,7 @@ class AuthController extends Controller {
 
 	public function login() {
  		if (hasSession())
- 			return $this->redirect('/');
+ 			return redirect('/');
         $this->view('auth/login');
  	}
 
@@ -19,7 +19,7 @@ class AuthController extends Controller {
 
  	public function register() {
  		if (hasSession())
- 			return $this->redirect('/');
+ 			return redirect('/');
         $this->view('auth/register');
  	}
 
@@ -44,7 +44,7 @@ class AuthController extends Controller {
  			];
  			$redirect = '/login';
  		}
- 		return $this->redirect($redirect, $content);
+ 		return redirect($redirect, $content);
  	}
 
  	public function logOut() {
@@ -54,7 +54,7 @@ class AuthController extends Controller {
 				'success' => ['Desconectado com sucesso']
 			]
 		];
- 		return $this->redirect('/', $content);
+ 		return redirect('/', $content);
 	}
 	 
 	public function signin($request) {
@@ -73,15 +73,15 @@ class AuthController extends Controller {
 		$validate['messages'] = $user->validate($rules);
 
 		if (!empty($validate['messages']))
-			return $this->redirect('/cadastrar', $validate);
+			return redirect('/cadastrar', $validate);
 		$user->password = password_hash($user->password, PASSWORD_BCRYPT);
 		if ($user->save()) {
 			$validate['messages'] = ['success' => ['Cadastrado com sucesso']];
-			return $this->redirect('/', $validate);
+			return redirect('/', $validate);
 		}
 		else {
 			$validate['messages'] = ['error' => ['conn' => 'Houve um erro de conexão']];
-			return $this->redirect('/cadastrar', $validate);
+			return redirect('/cadastrar', $validate);
 		}
 		
 	}

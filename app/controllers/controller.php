@@ -11,15 +11,4 @@ class Controller {
     require __DIR__.'/../../resources/views/' . $view . '.php';
   }
 
-  public function setViewData($data = []) {
-    if (!isset($_SESSION) || empty($_SESSION))
-      session_start();
-    $_SESSION['data'] = $data;
-  }
-
-  public function redirect($uri, $data = [], $files = []) {
-    $this->setViewData($data);
-    return header('Location: '.$uri);
-  }
-
 }

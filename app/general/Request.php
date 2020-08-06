@@ -31,7 +31,7 @@ class Request {
             }
         }
         else {
-            $this->newByUri($base, $data);
+            $this->newByUri($base, $data, $files);
         }
 
     }

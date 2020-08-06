@@ -12,6 +12,27 @@ function resolve($base = '', $data = [], $files = []) {
     $request = new Request($base, $data, $files);
     return Route::resolve($request);
 }
+
+function redirect($base, $data = [], $files = []) {
+    if (!isset($_SESSION))
+        session_start();
+    $_SESSION['redirect'] = [
+        'base' => $base,
+        'data' => $data,
+        'files' => $files
+    ];
+    return header('Location: '.$base);
+}
+
+function redirectHasData() {
+    return isset($_SESSION['redirect']);
+}
+
+function redirectGetData() {
+    $aux = $_SESSION['redirect'];
+    unset($_SESSION['redirect']);
+    return $aux;
+}
  
  
 function route($name, $params = null) {
