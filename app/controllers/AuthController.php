@@ -10,17 +10,17 @@ class AuthController extends Controller {
 	public function login($data = []) {
  		if (hasSession())
  			return redirect('/');
-        $this->view('auth/login', $data['custom']);
+        return view('auth/login', $data['custom']);
  	}
 
  	public function forgotPassword() {
-        $this->view('auth/forgot-password');
+        return view('auth/forgot-password');
  	}
 
  	public function register($data = []) {
  		if (hasSession())
  			return redirect('/');
-        $this->view('auth/register', $data['custom']);
+        return view('auth/register', $data['custom']);
  	}
 
  	public function auth($request) {

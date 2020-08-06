@@ -7,7 +7,10 @@ function request() {
     return new Request;
 }
  
- 
+function view($view, $data = []) {
+    require __DIR__.'/../../resources/views/' . $view . '.php';
+}
+
 function resolve($base = '', $data = [], $files = []) {
     $request = new Request($base, $data, $files);
     return Route::resolve($request);
