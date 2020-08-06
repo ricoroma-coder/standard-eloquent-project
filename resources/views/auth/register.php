@@ -16,7 +16,7 @@
 	<div id="content">
 		<div class="bg bg-dark"></div>
 		
-		<div class="row m-0 mt-5 pt-5">
+		<div class="row m-0 my-5 pt-5">
 			
 			<form class="form-group row col-sm-6 m-auto p-4 border border-secondary rounded bg-light" method="POST" action="/cadastrar/auth">
 				<div class="col-sm-12 mb-2">

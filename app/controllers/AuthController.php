@@ -7,20 +7,20 @@ use App\User;
 
 class AuthController extends Controller {
 
-	public function login() {
+	public function login($data = []) {
  		if (hasSession())
  			return redirect('/');
-        $this->view('auth/login');
+        $this->view('auth/login', $data['custom']);
  	}
 
  	public function forgotPassword() {
         $this->view('auth/forgot-password');
  	}
 
- 	public function register() {
+ 	public function register($data = []) {
  		if (hasSession())
  			return redirect('/');
-        $this->view('auth/register');
+        $this->view('auth/register', $data['custom']);
  	}
 
  	public function auth($request) {
