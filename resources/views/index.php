@@ -22,7 +22,7 @@ require __DIR__.'/../preparation/header.php';
 		<div class="row col60 rounded bg-light h-50 position-relative m-auto">
 
 			<div class="h-100 col-sm-5 p-3">
-				<img src="<?php echo asset('images/system-images/avatar/avatar-happy.png'); ?>" class="w-100 h-100 rounded-circle">
+				<img src="<?php echo asset('images/system-images/avatar/avatar-happy.png'); ?>" class="w-100 mh-100 rounded-circle">
 			</div>
 
 			<div class="h-100 col-sm-7 p-3 text-center row m-0">
